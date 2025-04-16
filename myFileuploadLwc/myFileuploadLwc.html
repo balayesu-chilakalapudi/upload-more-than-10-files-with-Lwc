@@ -1,0 +1,42 @@
+<template>
+    <template if:true={recordId}>
+    <lightning-card title="Upload Files">
+        <!--
+        <lightning-file-upload
+            label="Attach Files"
+            name="fileUploader"
+            accept={acceptedFormats}
+            record-id={recordId}
+            onuploadfinished={handleUploadFinished}
+            multiple>
+        </lightning-file-upload>
+      
+       <div
+        class="drop-zone"
+        ondragover={handleDragOver}
+        ondrop={handleDrop}
+        onclick={triggerFileSelect}
+    >
+        <input
+          <p if:true={hasFiles}>{fileCountMessage}</p>
+        <p if:false={hasFiles}>Drag & Drop files here or click to browse</p>
+         type="file"
+            multiple
+            class="hidden-file-input"
+            onchange={handleFilesChange}
+            ref="fileInput"
+        />
+    </div>
+-->
+     <lightning-input
+        type="file"
+        label="Attachment"
+        onchange={handleFilesChange}
+        multiple
+    >
+    </lightning-input>
+    <lightning-button label="Upload Files" onclick={uploadFiles}></lightning-button>
+    </lightning-card>
+    <lightning-spinner if:true={isLoading}></lightning-spinner>
+    </template>
+</template>
